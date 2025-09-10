@@ -2,7 +2,6 @@
 import { getPostBySlug, getAllPosts } from '@/lib/cosmic'
 import { Post } from '@/types'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import AuthorCard from '@/components/AuthorCard'
 import ShareButtons from '@/components/ShareButtons'
 
@@ -49,13 +48,15 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-4">
             {post.metadata.author?.metadata?.profile_photo && (
-              <img
-                src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
-                alt={post.metadata.author.metadata.name || post.metadata.author.title}
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
+              <div className="w-10 h-10 flex-shrink-0">
+                <img
+                  src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
+                  alt={post.metadata.author.metadata.name || post.metadata.author.title}
+                  width={40}
+                  height={40}
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
             )}
             <div>
               <p className="font-medium text-gray-900">

@@ -9,13 +9,15 @@ export default function AuthorCard({ author }: AuthorCardProps) {
     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
       <div className="flex items-start gap-4">
         {author.metadata?.profile_photo && (
-          <img
-            src={`${author.metadata.profile_photo.imgix_url}?w=200&h=200&fit=crop&auto=format,compress`}
-            alt={author.metadata.name || author.title}
-            width={80}
-            height={80}
-            className="rounded-full flex-shrink-0"
-          />
+          <div className="w-20 h-20 flex-shrink-0">
+            <img
+              src={`${author.metadata.profile_photo.imgix_url}?w=200&h=200&fit=crop&auto=format,compress`}
+              alt={author.metadata.name || author.title}
+              width={80}
+              height={80}
+              className="w-full h-full rounded-full object-cover"
+            />
+          </div>
         )}
         
         <div className="flex-1">

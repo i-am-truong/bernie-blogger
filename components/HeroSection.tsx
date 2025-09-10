@@ -35,13 +35,15 @@ export default function HeroSection({ post }: HeroSectionProps) {
             
             <div className="flex items-center gap-4 mb-6">
               {post.metadata.author?.metadata?.profile_photo && (
-                <img
-                  src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
-                  alt={post.metadata.author.metadata.name || post.metadata.author.title}
-                  width={50}
-                  height={50}
-                  className="rounded-full"
-                />
+                <div className="w-12 h-12 flex-shrink-0">
+                  <img
+                    src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
+                    alt={post.metadata.author.metadata.name || post.metadata.author.title}
+                    width={50}
+                    height={50}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
               )}
               <div>
                 <p className="font-medium text-gray-900">

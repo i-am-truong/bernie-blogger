@@ -46,13 +46,15 @@ export default function PostCard({ post }: PostCardProps) {
           
           <div className="flex items-center gap-3 text-sm text-gray-500">
             {post.metadata.author?.metadata?.profile_photo && (
-              <img
-                src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
-                alt={post.metadata.author.metadata.name || post.metadata.author.title}
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
+              <div className="w-6 h-6 flex-shrink-0">
+                <img
+                  src={`${post.metadata.author.metadata.profile_photo.imgix_url}?w=100&h=100&fit=crop&auto=format,compress`}
+                  alt={post.metadata.author.metadata.name || post.metadata.author.title}
+                  width={24}
+                  height={24}
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
             )}
             <span className="font-medium">
               {post.metadata.author?.metadata?.name || post.metadata.author?.title}
