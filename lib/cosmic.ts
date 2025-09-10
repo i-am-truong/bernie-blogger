@@ -20,7 +20,7 @@ export async function getAllPosts() {
       .depth(1);
     
     // Sort by created_at, newest first
-    return response.objects.sort((a, b) => {
+    return response.objects.sort((a: any, b: any) => {
       const dateA = new Date(a.created_at).getTime();
       const dateB = new Date(b.created_at).getTime();
       return dateB - dateA;
@@ -78,7 +78,7 @@ export async function getPostsByCategory(categoryId: string) {
       .depth(1);
     
     // Sort by created_at, newest first
-    return response.objects.sort((a, b) => {
+    return response.objects.sort((a: any, b: any) => {
       const dateA = new Date(a.created_at).getTime();
       const dateB = new Date(b.created_at).getTime();
       return dateB - dateA;
