@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Bernie Blogger - A Modern Newsletter Platform',
   description: 'A modern newsletter platform for writers, journalists, and content creators',
   keywords: 'newsletter, substack, blog, writing, journalism, content creation',
+  icons: {
+    icon: '/favicon/favicon.ico',
+    shortcut: '/favicon/favicon.ico',
+    apple: '/favicon/apple-touch-icon.png',
+  },
+  manifest: '/favicon/site.webmanifest',
 }
 
 export default function RootLayout({
