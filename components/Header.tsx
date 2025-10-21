@@ -11,9 +11,9 @@ export default async function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">
-            Newsletter
+            Bernie Blog
           </Link>
-          
+
           <Navigation categories={categories} />
         </div>
       </div>
